@@ -1,5 +1,7 @@
+import Home from './pages/Home';
+
 const App = () => {
-  return <div>React Ecommerce App</div>;
+  return <Home />;
 };
 
 export default App;
