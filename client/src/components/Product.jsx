@@ -98,11 +98,11 @@ const Heart = styled.img`
   }
 `;
 
-const Product = ({ item }) => {
+const Product = ({ img }) => {
   return (
     <Container>
       <Circle />
-      <Image src={item.img} />
+      <Image src={img} />
       <Info>
         <Icon>
           <ShoppingCartOutlined />
