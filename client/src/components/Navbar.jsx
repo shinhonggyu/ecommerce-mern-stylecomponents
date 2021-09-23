@@ -1,21 +1,17 @@
-import { Badge } from '@material-ui/core';
-import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
-import { mobile } from '../responsive';
+import Logo from './Logo';
+import { Badge } from '@material-ui/core';
+import { ShoppingCartOutlined, Search } from '@material-ui/icons';
 
 const Container = styled.div`
   height: 60px;
-  ${mobile({ height: '50px' })}
 `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  ${mobile({
-    padding: '10px 0px',
-  })}
+  justify-content: space-between;
 `;
 
 const Left = styled.div`
@@ -25,9 +21,8 @@ const Left = styled.div`
 `;
 
 const Language = styled.span`
-  font-size: 14px;
+  font-size: 1px;
   cursor: pointer;
-  ${mobile({ display: 'none' })}
 `;
 
 const SearchContainer = styled.div`
@@ -40,35 +35,54 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
-  ${mobile({ width: '50px' })}
-  &:focus {
-    outline: none;
-  }
+  outline: none;
 `;
 
 const Center = styled.div`
   flex: 1;
   text-align: center;
-`;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 
-const Logo = styled.h1`
-  font-weight: bold;
-  ${mobile({ fontSize: '24px' })}
+  #rect {
+    stroke-dasharray: 780;
+    stroke-dashoffset: 0;
+    animation: moveRect 3s ease alternate infinite;
+  }
+
+  @keyframes moveRect {
+    to {
+      stroke-dashoffset: 780;
+    }
+  }
+
+  #circle {
+    stroke-dasharray: 540;
+    stroke-dashoffset: 0;
+    fill: white;
+    animation: moveCircle 3s ease alternate infinite;
+  }
+
+  @keyframes moveCircle {
+    100% {
+      stroke-dashoffset: 540;
+      fill: #12741c;
+    }
+  }
 `;
 
 const Right = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  ${mobile({ justifyContent: 'center', flex: 2 })}
+  align-items: center;
 `;
 
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
-  ${mobile({ fontSize: '12px', marginLeft: '10px' })}
 `;
 
 const Navbar = () => {
@@ -78,12 +92,12 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input placeholder="Search" />
-            <Search style={{ color: 'gray', fontSize: '18px' }} />
+            <Input />
+            <Search style={{ color: 'gray', fontSize: '16px' }} />
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>SHIN.</Logo>
+          <Logo />
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
