@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   padding: 20px;
-  width: 40%;
+  width: 22%;
   background-color: white;
   border-radius: 5px;
   ${mobile({ width: '75%' })}
@@ -61,8 +61,6 @@ const Register = () => {
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
           <Input placeholder="username" />
           <Input placeholder="email" />
           <Input placeholder="password" />

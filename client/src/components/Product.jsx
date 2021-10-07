@@ -1,5 +1,6 @@
 import { SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
   opacity: 0;
@@ -48,7 +49,7 @@ const Circle = styled.div`
 
 const Image = styled.img`
   height: 75%;
-  object-fit: cover;
+  /* object-fit: cover; */
   z-index: 2;
 `;
 
@@ -98,20 +99,22 @@ const Heart = styled.img`
   }
 `;
 
-const Product = ({ img }) => {
+const Product = ({ item }) => {
   return (
     <Container>
       <Circle />
-      <Image src={img} />
+      <Image src={item.img} />
       <Info>
         <Icon>
           <ShoppingCartOutlined />
         </Icon>
         <Icon>
-          <SearchOutlined />
+          <Link to={`/product/${item._id}`}>
+            <SearchOutlined />
+          </Link>
         </Icon>
         <Icon>
-          <Heart src="./assets/heart.png" />
+          <Heart src="../assets/heart.png" />
         </Icon>
       </Info>
     </Container>

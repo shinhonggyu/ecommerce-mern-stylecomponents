@@ -43,7 +43,6 @@ router.post('/login', async (req, res) => {
     }
 
     // create JWT
-    console.log(user);
     const accessToken = jwt.sign(
       {
         id: user._id,
@@ -57,7 +56,7 @@ router.post('/login', async (req, res) => {
 
     const { password, ...others } = user._doc;
 
-    res.status(500).json({ ...others, accessToken });
+    res.status(200).json({ ...others, accessToken });
   } catch (error) {
     res.status(500).json(error);
   }
