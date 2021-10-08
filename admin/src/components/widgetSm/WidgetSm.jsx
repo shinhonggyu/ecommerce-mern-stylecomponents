@@ -1,7 +1,11 @@
 import { Visibility } from '@material-ui/icons';
+import { useEffect, useState } from 'react';
 import './widgetSm.css';
+import { userRequest } from '../../requestMethod';
 
 const WidgetSm = () => {
+  const [users, setUsers] = useState([]);
+
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>
